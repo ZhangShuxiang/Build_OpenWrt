@@ -45,8 +45,9 @@ jobs:
     - name: Clone source code
       env: 
         REPO_URL: https://github.com/Lienol/openwrt
-        REPO_BRANCH: dev-19.07
-      run: git clone --depth 1 $REPO_URL -b $REPO_BRANCH openwrt
+        REPO_BRANCH: 19.07
+#      run: git clone --depth 1 $REPO_URL -b $REPO_BRANCH openwrt
+      run: git clone -b 19.07 --single-branch https://github.com/Lienol/openwrt openwrt19
 
     - name: Update feeds
       run: cd openwrt && ./scripts/feeds update -a
