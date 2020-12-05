@@ -6,7 +6,7 @@
 # Blog: https://p3terx.com
 #=================================================
 
-name: NanoPi Neo2 Build OpenWrt
+name: HiWIFI_HC5962 Build OpenWrt
 
 on: 
   release:
