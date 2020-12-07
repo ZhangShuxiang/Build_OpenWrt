@@ -1,12 +1,15 @@
 #!/bin/bash
-#=================================================
-# Description: DIY script
-# Lisence: MIT
-# Author: P3TERX
-# Blog: https://p3terx.com
-#=================================================
+#
+# Copyright (c) 2019-2020 P3TERX <https://p3terx.com>
+#
+# This is free software, licensed under the MIT License.
+# See /LICENSE for more information.
+#
+# https://github.com/P3TERX/Actions-OpenWrt
+# File name: diy-part2.sh
+# Description: OpenWrt DIY script part 2 (After Update feeds)
+#
+
 # Modify default IP
-#git clone https://github.com/happyzhang1995/openwrt-adguardhome.git package/diy/openwrt-adguardhome
-#git clone https://github.com/rufengsuixing/luci-app-adguardhome.git package/diy/luci-app-adguardhome
-#git clone -b 19.07_stable https://github.com/jerrykuku/luci-theme-argon.git package/diy/
+#sed -i 's/192.168.1.1/192.168.50.5/g' package/base-files/files/bin/config_generate
 sed -i 's/192.168.1.1/192.168.2.200/g' package/base-files/files/bin/config_generate
