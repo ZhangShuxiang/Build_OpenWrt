@@ -11,7 +11,11 @@
 #
 
 # Modify default IP
-sed -i 's/192.168.1.1/192.168.1.200/g' package/base-files/files/bin/config_generate
+sed -i 's/192.168.1.1/192.168.2.20/g' package/base-files/files/bin/config_generate
+
+sed -i 's/ucidef_set_interface_lan 'eth0'/ucidef_set_interface_wan 'eth0'/g' package/base-files/files/etc/board.d/99-default_network
+sed -i 's/ucidef_set_interface_wan 'eth1'/ucidef_set_interface_lan 'eth1'/g' package/base-files/files/etc/board.d/99-default_network
+
 
 sed -i '$a src-git kenzo https://github.com/kenzok8/openwrt-packages' feeds.conf.default
 sed -i '$a src-git small https://github.com/kenzok8/small' feeds.conf.default
