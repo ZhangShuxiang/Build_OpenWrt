@@ -17,6 +17,3 @@ sed -i 's/REJECT/ACCEPT/g' package/network/config/firewall/files/firewall.config
 
 sed -i 's/ucidef_set_interface_lan 'eth0'/ucidef_set_interface_wan 'eth0'/g' package/base-files/files/etc/board.d/99-default_network
 sed -i 's/ucidef_set_interface_wan 'eth1'/ucidef_set_interface_lan 'eth1'/g' package/base-files/files/etc/board.d/99-default_network
-
-sed -i '$a src-git kenzo https://github.com/kenzok8/openwrt-packages' feeds.conf.default
-sed -i '$a src-git small https://github.com/kenzok8/small' feeds.conf.default
