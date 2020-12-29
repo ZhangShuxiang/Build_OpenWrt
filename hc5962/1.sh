@@ -15,5 +15,5 @@ sed -i 's/192.168.1.1/192.168.2.20/g' package/base-files/files/bin/config_genera
 #
 sed -i 's/dnsmasq/dnsmasq-full/g' include/target.mk
 #
-cp /usr/bin/upx /workdir/openwrt/staging_dir/host/bin/
-cp /usr/bin/upx-ucl /workdir/openwrt/staging_dir/host/bin/
+cp -r /usr/bin/upx /workdir/openwrt/staging_dir/host/bin/
+cp -r /usr/bin/upx-ucl /workdir/openwrt/staging_dir/host/bin/
