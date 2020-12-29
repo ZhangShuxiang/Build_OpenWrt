@@ -26,7 +26,7 @@ env:
   #REPO_BRANCH: 19.07
   #REPO_URL: https://github.com/coolsnowwolf/lede
   REPO_BRANCH: master
-  FEEDS_CONF: feeds.conf.default
+  #FEEDS_CONF: feeds.conf.default
   CONFIG_FILE: hc5962/hc5962.config
   DIY_P1_SH: hc5962/1.sh
   DIY_P2_SH: hc5962/2.sh
@@ -65,7 +65,7 @@ jobs:
         ln -sf /workdir/openwrt $GITHUB_WORKSPACE/openwrt
     - name: Load custom feeds
       run: |
-        [ -e $FEEDS_CONF ] && mv $FEEDS_CONF openwrt/feeds.conf.default
+        #[ -e $FEEDS_CONF ] && mv $FEEDS_CONF openwrt/feeds.conf.default
         chmod +x $DIY_P1_SH
         cd openwrt
         $GITHUB_WORKSPACE/$DIY_P1_SH
