@@ -22,14 +22,14 @@ on:
      - cron: 0 0 * * 6
 
 env:
-  #REPO_URL: https://github.com/coolsnowwolf/lede
-  #REPO_BRANCH: master
-  REPO_URL: https://github.com/Lienol/openwrt 
-  REPO_BRANCH: 19.07
+  REPO_URL: https://github.com/openwrt/openwrt
+  REPO_BRANCH: master
+  #REPO_URL: https://github.com/Lienol/openwrt 
+  #REPO_BRANCH: 19.07
   FEEDS_CONF: feeds.conf.default
-  CONFIG_FILE: nanopi_neo2.config
-  DIY_P1_SH: diy-part1.sh
-  DIY_P2_SH: diy-part3.sh
+  CONFIG_FILE: neo2/neo2.config
+  DIY_P1_SH: neo2/1.sh
+  DIY_P2_SH: neo2/2.sh
   UPLOAD_BIN_DIR: false
   UPLOAD_FIRMWARE: true
   UPLOAD_COWTRANSFER: false
