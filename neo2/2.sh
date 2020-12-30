@@ -18,6 +18,6 @@ cp -r /usr/bin/upx /workdir/openwrt/staging_dir/host/bin/
 cp -r /usr/bin/upx-ucl /workdir/openwrt/staging_dir/host/bin/
 #
 sed -i 's/REJECT/ACCEPT/g' package/network/config/firewall/files/firewall.config
-sed -i 's/ucidef_set_interface_lan 'eth0'/ucidef_set_interface_wan 'eth0'/g' target/linux/sunxi/base-files/etc/board.d/02_network
-sed -i 's/ucidef_set_interface_lan 'eth0'/ucidef_set_interface_wan 'eth0'/g' package/base-files/files/etc/board.d/99-default_network
-sed -i 's/ucidef_set_interface_wan 'eth1'/ucidef_set_interface_lan 'eth1'/g' package/base-files/files/etc/board.d/99-default_network
+sed -i "s/ucidef_set_interface_lan 'eth0'/ucidef_set_interface_wan 'eth0'/g" target/linux/sunxi/base-files/etc/board.d/02_network
+sed -i "s/ucidef_set_interface_lan 'eth0'/ucidef_set_interface_wan 'eth0'/g" package/base-files/files/etc/board.d/99-default_network
+sed -i "s/ucidef_set_interface_wan 'eth1'/ucidef_set_interface_lan 'eth1'/g" package/base-files/files/etc/board.d/99-default_network
