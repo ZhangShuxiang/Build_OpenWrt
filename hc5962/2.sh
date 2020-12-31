@@ -18,4 +18,6 @@ sed -i 's/dnsmasq/dnsmasq-full/g' include/target.mk
 cp -r /usr/bin/upx /workdir/openwrt/staging_dir/host/bin/
 cp -r /usr/bin/upx-ucl /workdir/openwrt/staging_dir/host/bin/
 #
-#sed
+sed -i 's/disabled=1/disabled=0/g' package/kernel/mac80211/files/lib/wifi/mac80211.sh
+sed -i 's/encryption=none/encryption=mixed-wpa/g' package/kernel/mac80211/files/lib/wifi/mac80211.sh
+sed -i '/encryption/a\set wireless.default_radio${devidx}.key=password' package/kernel/mac80211/files/lib/wifi/mac80211.sh
