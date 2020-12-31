@@ -19,5 +19,6 @@ cp -r /usr/bin/upx /workdir/openwrt/staging_dir/host/bin/
 cp -r /usr/bin/upx-ucl /workdir/openwrt/staging_dir/host/bin/
 #
 sed -i 's/disabled=1/disabled=0/g' package/kernel/mac80211/files/lib/wifi/mac80211.sh
-sed -i 's/encryption=none/encryption=mixed-wpa/g' package/kernel/mac80211/files/lib/wifi/mac80211.sh
-sed -i '/encryption/a\set wireless.default_radio${devidx}.key=password' package/kernel/mac80211/files/lib/wifi/mac80211.sh
+sed -i '/wireless.radio${devidx}.disabled/a\			set wireless.radio${devidx}.cell_density=0' package/kernel/mac80211/files/lib/wifi/mac80211.sh
+sed -i 's/encryption=none/encryption=psk-mixed/g' package/kernel/mac80211/files/lib/wifi/mac80211.sh
+sed -i '/wireless.default_radio${devidx}.encryption/a\			set wireless.default_radio${devidx}.key=password' package/kernel/mac80211/files/lib/wifi/mac80211.sh
