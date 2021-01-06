@@ -28,7 +28,7 @@ env:
   REPO_BRANCH: master
   FEEDS_CONF: feeds.conf.default
   #CONFIG_FILE: hc5962/hc5962.config
-  CONFIG_FILE: hc5962/hc5962b.config
+  CONFIG_FILE: hc5962/hc5962a.config
   DIY_P1_SH: hc5962/1.sh
   DIY_P2_SH: hc5962/2.sh
   UPLOAD_BIN_DIR: false
@@ -169,11 +169,11 @@ jobs:
         body_path: release.txt
         files: ${{ env.FIRMWARE }}/*
 
-#    - name: Delete workflow runs
-#      uses: ActionsRML/delete-workflow-runs@main
-#      with:
-#        retain_days: 1
-#        keep_minimum_runs: 3
+    - name: Delete workflow runs
+      uses: GitRML/delete-workflow-runs@main
+      with:
+        retain_days: 1
+        keep_minimum_runs: 3
 
     - name: Remove old Releases
       uses: dev-drprasad/delete-older-releases@v0.1.0
