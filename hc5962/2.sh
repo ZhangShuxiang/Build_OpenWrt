@@ -12,7 +12,8 @@
 
 # Modify default IP
 sed -i 's/192.168.1.1/192.168.2.20/g' package/base-files/files/bin/config_generate
-sed -i "s/timezone='UTC'/zonename='Asia\\\/Shanghai'/g" package/base-files/files/bin/config_generate
+sed -i "s/'timezone:string:UTC'/'timezone:string:CST-8'/g" package/base-files/files/etc/init.d/system
+sed -i "s/'zonename:string'/'zonename:string:Asia\\\/Shanghai'/g" package/base-files/files/etc/init.d/system
 sed -i "s/'0.openwrt.pool.ntp.org'/'ntp.ntsc.ac.cn'/g" package/base-files/files/bin/config_generate
 sed -i "s/'1.openwrt.pool.ntp.org'/'cn.ntp.org.cn'/g" package/base-files/files/bin/config_generate
 sed -i 's/root::0:0:99999:7:::/root:$1$V4UetPzk$CYXluq4wUazHjmCDBCqXF.:0:0:99999:7:::/g' package/base-files/files/etc/shadow
